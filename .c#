@@ -1,0 +1,126 @@
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp2
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void cbEditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem item = comboBox.SelectedItem as ComboBoxItem;
+            if (item == null)
+            {
+                MessageBoxResult msg = MessageBox.Show("Kkada kluda", "Error", MessageBoxButton.OK);
+
+            }
+            else
+            {
+                if (cbTextBox.Text == "")
+                {
+                    MessageBoxResult msg = MessageBox.Show("teksts laikam idk, raksti kko", "Error", MessageBoxButton.OK);
+
+                }
+                else
+                {
+                    item.Content = cbTextBox.Text;
+                    cbTextBox.Text = "";
+                }
+            }
+        }
+
+        private void cbAddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            if(cbTextBox.Text == "")
+            {
+                MessageBoxResult msg = MessageBox.Show("teksts laikam idk, raksti kko", "Error",MessageBoxButton.OK);
+            }
+            else
+            {
+                item.Content = cbTextBox.Text;
+                comboBox.Items.Add(item);
+                cbTextBox.Text = "";
+            }
+        }
+
+        private void cbDeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem item = comboBox.SelectedItem as ComboBoxItem;
+            if(item == null)
+            {
+                MessageBoxResult msg = MessageBox.Show("Kkada kluda", "Error", MessageBoxButton.OK);
+            }
+            else
+            {
+                comboBox.Items.Remove(item);
+
+            }
+        }
+
+        private void lbEditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem item = listBox.SelectedItem as ListBoxItem;
+            if (item == null)
+            {
+                MessageBoxResult msg = MessageBox.Show("Kkada kluda", "Error", MessageBoxButton.OK);
+            }
+            else
+            {
+                if (lbTextBox.Text == "")
+                {
+                    MessageBoxResult msg = MessageBox.Show("teksts laikam idk, raksti kko", "Error", MessageBoxButton.OK);
+
+                }
+                else
+                {
+                    item.Content = lbTextBox.Text;
+                    lbTextBox.Text = "";
+                }
+            }
+        }
+
+            private void lbAddBtn_Click(object sender, RoutedEventArgs e)
+            {
+                ListBoxItem item = new ListBoxItem();
+                if (lbTextBox.Text == "")
+                {
+                    MessageBoxResult msg = MessageBox.Show("teksts laikam idk, raksti kko", "Error", MessageBoxButton.OK);
+                }
+                else
+                {
+                    item.Content = lbTextBox.Text;
+                    listBox.Items.Add(item);
+                    lbTextBox.Text = "";
+                }
+            }
+
+        private void lbDeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem item = listBox.SelectedItem as ListBoxItem;
+            if(item == null)
+            {
+                MessageBoxResult msg = MessageBox.Show("Kkada kluda", "Error", MessageBoxButton.OK);
+            }
+            else
+            {
+                listBox.Items.Remove(item);
+            }
+        }
+    }
+}
