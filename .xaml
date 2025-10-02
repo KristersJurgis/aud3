@@ -1,0 +1,49 @@
+<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <ComboBox Name="comboBox" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top"></ComboBox>
+        <ListBox Name="listBox" Grid.Row="0" Grid.Column="1"></ListBox>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Name="cbTextBox" Grid.Row="0" Grid.Column="0" Margin="10"></TextBox>
+            <Button Name="cbEditBtn" Grid.Row="0" Grid.Column="1" Margin="10" Content="Edit element" Click="cbEditBtn_Click"></Button>
+            <Button Name="cbAddBtn" Grid.Row="1" Grid.Column="0" Margin="10" Content="Add to ComboBox" Click="cbAddBtn_Click"></Button>
+            <Button Name="cbDeleteBtn" Grid.Row="1" Grid.Column="1" Margin="10" Content="Delete element" Click="cbDeleteBtn_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Name="lbTextBox" Grid.Row="0" Grid.Column="0" Margin="10"></TextBox>
+            <Button Name="lbEditBtn" Grid.Row="0" Grid.Column="1" Margin="10" Content="Edit element" Click="lbEditBtn_Click"></Button>
+            <Button Name="lbAddBtn" Grid.Row="1" Grid.Column="0" Margin="10" Content="Add to ListBox" Click="lbAddBtn_Click"></Button>
+            <Button Name="lbDeleteBtn" Grid.Row="1" Grid.Column="1" Margin="10" Content="Delete element" Click="lbDeleteBtn_Click"></Button>
+        </Grid>
+    </Grid>
+</Window>   
